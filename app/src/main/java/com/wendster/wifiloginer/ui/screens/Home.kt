@@ -98,7 +98,7 @@ fun Home(viewModel: MainViewModel) {
                     )
                     Button(
                         modifier = Modifier.fillMaxWidth().padding(top = 16.dp),
-                        onClick = { viewModel.wifiLoginStatus.value = viewModel.doWifiLogin() }
+                        onClick = { viewModel.doWifiLogin() }
                     ) {
                         Icon(
                             imageVector = Icons.Rounded.ExitToApp,
