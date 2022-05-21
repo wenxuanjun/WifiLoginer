@@ -8,7 +8,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -35,10 +34,10 @@ fun PreferenceListItem(
     val styledText: @Composable () -> Unit = { ProvideTextStyle(typography.bodyLarge, text) }
     val styledTrailing: @Composable (() -> Unit)? = if (trailing != null) {{ ProvideTextStyle(typography.bodyMedium, trailing) }} else null
     val styledSecondaryText: @Composable (() -> Unit)? = if (secondaryText != null) {{ ProvideTextStyle(typography.bodyMedium, secondaryText) }} else null
-    Row(modifier.semantics(mergeDescendants = true) {}.heightIn(min = if (secondaryText != null) 80.dp else 64.dp)) {
+    Row(modifier.heightIn(min = if (secondaryText != null) 80.dp else 64.dp)) {
         if (icon != null) { Box(modifier = Modifier.align(Alignment.CenterVertically).widthIn(min = 56.dp).padding(start = 16.dp)) { icon() } }
-        if (styledSecondaryText == null) {Box(modifier = Modifier.weight(1f).align(Alignment.CenterVertically).padding(16.dp)) { styledText() } }
+        if (styledSecondaryText == null) { Box(modifier = Modifier.weight(1f).align(Alignment.CenterVertically).padding(16.dp)) { styledText() } }
         else { Column(Modifier.align(Alignment.CenterVertically).weight(1f).padding(16.dp)) { text(); styledSecondaryText() } }
-        if (styledTrailing != null) { Box(Modifier.align(Alignment.CenterVertically).padding(end = 16.dp)) { styledTrailing() } }
+        if (styledTrailing != null) { Box(Modifier.align(Alignment.CenterVertically).widthIn(min = 56.dp).padding(end = 16.dp)) { styledTrailing() } }
     }
 }
