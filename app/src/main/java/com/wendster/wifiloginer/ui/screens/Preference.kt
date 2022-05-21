@@ -2,14 +2,20 @@ package com.wendster.wifiloginer.ui.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Code
 import androidx.compose.material.icons.rounded.Edit
 import androidx.compose.material.icons.rounded.Lock
 import androidx.compose.material.icons.rounded.Router
+import androidx.compose.material3.Divider
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.wendster.wifiloginer.R
 import com.wendster.wifiloginer.ui.model.MainViewModel
+import com.wendster.wifiloginer.ui.widgets.PreferenceClickableItem
 import com.wendster.wifiloginer.ui.widgets.PreferenceEditText
 import com.wendster.wifiloginer.ui.widgets.PreferenceSwitch
 
@@ -51,6 +57,18 @@ fun Preference(viewModel: MainViewModel) {
                 Icon(
                     imageVector = Icons.Rounded.Edit,
                     contentDescription = stringResource(R.string.ui_customize_loginUrl)
+                )
+            }
+        )
+        Divider(modifier = Modifier.alpha(0.5f))
+        PreferenceClickableItem(
+            text = stringResource(R.string.ui_source_code),
+            secondaryText = "https://github.com/wenxuanjun/WifiLoginer",
+            onClick = { viewModel.intentToWebsite("https://github.com/wenxuanjun/WifiLoginer") },
+            icon = {
+                Icon(
+                    imageVector = Icons.Rounded.Code,
+                    contentDescription = stringResource(R.string.ui_source_code)
                 )
             }
         )

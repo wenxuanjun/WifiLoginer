@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">WifiLoginer</string>
+    <string name="dialog_confirm">Confirm</string>
+
     <string name="ui_login">Login</string>
     <string name="ui_login_success">Login Success</string>
     <string name="ui_login_failed_identity">Wrong username or password</string>
@@ -13,12 +15,14 @@
     <string name="ui_password">Password</string>
     <string name="ui_password_show">Show Password</string>
     <string name="ui_password_hide">Hide Password</string>
+
     <string name="ui_remember_password">Remember Password</string>
     <string name="ui_remember_password_description">It is well known that the remember password option in your school\'s login page is fake</string>
-    <string name="ui_loginUrl">Login url</string>
-    <string name="ui_customize_loginUrl">Customize login url</string>
+    <string name="ui_loginUrl">Login Url</string>
+    <string name="ui_customize_loginUrl">Customize Login Url</string>
     <string name="ui_customize_loginUrl_description">If the default login url is not available, you can use your own</string>
+    <string name="ui_source_code">Source Code</string>
+
     <string name="ui_bottomBar_login">Login Hotspot</string>
     <string name="ui_bottomBar_preference">Preference</string>
-    <string name="dialog_confirm">Confirm</string>
 </resources>

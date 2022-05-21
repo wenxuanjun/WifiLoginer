@@ -1,10 +1,14 @@
 package com.wendster.wifiloginer.ui.model
 
 import android.app.Application
+import android.content.Context
+import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import android.net.Uri
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
+import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.lifecycle.AndroidViewModel
 import com.android.volley.Response
@@ -32,6 +36,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val loginUri: MutableState<String> = mutableStateOf(dataStore.getPreference("login_uri", Constants.defaultLoginUri))
     val wifiLoginStatus: MutableState<WifiLoginStatus> = mutableStateOf(WifiLoginStatus.IDLE)
     val errorLoginMessage: MutableState<String> = mutableStateOf("")
+
+    fun intentToWebsite(uri: String) {
+        ContextCompat.startActivity(activity, Intent(Intent.ACTION_VIEW, Uri.parse(uri)).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK), null)
+    }
 
     fun onRememberPasswordChange() {
         rememberPassword.value = !rememberPassword.value
