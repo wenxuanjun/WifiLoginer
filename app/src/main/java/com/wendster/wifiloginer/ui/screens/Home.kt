@@ -20,7 +20,7 @@ fun Home(viewModel: MainViewModel) {
         verticalArrangement = Arrangement.Center,
         modifier = Modifier.fillMaxSize()
     ) {
-        Column(Modifier.width(300.dp)) {
+        Column(Modifier.width(320.dp)) {
             HomeAlerts(viewModel)
             HomeLoginCard(viewModel)
             HomeDialogs(viewModel)

@@ -60,7 +60,7 @@ fun Preference(viewModel: MainViewModel) {
                 )
             }
         )
-        Divider(modifier = Modifier.alpha(0.5f))
+        Divider(modifier = Modifier.alpha(0.2f))
         PreferenceClickableItem(
             text = stringResource(R.string.ui_source_code),
             secondaryText = "https://github.com/wenxuanjun/WifiLoginer",
